@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: bookings-management
+  name: bookings-management
+spec:
+  ports:
+    - name: "8087"
+      port: 8087
+      targetPort: 8087
+  selector:
+    io.kompose.service: bookings-management
+status:
+  loadBalancer: {}
